@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Iamniels_AddressAttribute>
+            <version>1.0.0</version>
+        </Iamniels_AddressAttribute>
+    </modules>
+    
+    <admin>
+        <fieldsets>
+            <customer_dataflow>
+                <building>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                </building>
+            </customer_dataflow>
+        </fieldsets>
+    </admin>
+    
+    <global>
+        <resources>
+            <addressattribute_setup>
+                <setup>
+                    <module>Iamniels_AddressAttribute</module>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+           </addressattribute_setup>
+
+        </resources>
+        <fieldsets>
+            <sales_copy_order_billing_address>
+                <building><to_order>*</to_order></building>
+            </sales_copy_order_billing_address>
+            <sales_copy_order_shipping_address>
+                <building><to_order>*</to_order></building>
+            </sales_copy_order_shipping_address>
+            <sales_convert_quote_address>
+                <building><to_order_address>*</to_order_address><to_customer_address>*</to_customer_address></building>
+            </sales_convert_quote_address>
+            <sales_convert_order_address>
+                <building><to_quote_address>*</to_quote_address></building>
+            </sales_convert_order_address>
+            <customer_address>
+                 <building><to_quote_address>*</to_quote_address></building>
+            </customer_address>
+            <checkout_onepage_billing>
+                <building><to_customer>*</to_customer></building>
+            </checkout_onepage_billing>
+        </fieldsets>
+    </global>
+</config>
